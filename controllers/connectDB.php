@@ -8,6 +8,8 @@
     
     $conecta = new mysqli($servidor,$usuario,$senha,$bdName);
     
+
+    //Verifica se deu algum erro de conexão com o banco de dados
     if(mysqli_connector_errno()){
         
         die("Erro ao conectar com o banco de dados. -> ".mysqli_connector_errno());
