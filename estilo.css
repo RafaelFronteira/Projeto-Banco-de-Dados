@@ -1,0 +1,15 @@
+div{
+    width: 250px;
+    height: 150px;
+    font-family: Arial;
+    fonnt-size: 20px;
+    text-align: center;
+}
+legend{
+    text-align: right;
+    font-size: 30px;
+}
+a{
+    font-size: 10px;
+}
+
