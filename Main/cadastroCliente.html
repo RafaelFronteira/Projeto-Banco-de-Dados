@@ -1,14 +1,8 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Cadastro</title>
         <link rel="stylesheet" type="text/css" href="estilo.css">
-        <link rel = "stylesheet" type="text/js" href="validacao.js">
         
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,23 +10,24 @@ and open the template in the editor.
     </head>
         
     <body>
+        
         <div>
-            <script type="text/javascript" src = "validacao.js">
-                ola();
-                </script>
-
+            
             <fieldset><legend>Cadastro</legend>   
-                <form method = "get" action = "index.php">
-                    Nome :</br> <input type="text" name="nome"></br>
+                <form method = "POST" action = "Php/InsereDadosCliente.php">
+                    Nome :</br> <input type="text" name="nome" required></br>
                     CPF: </br><input type = "text" name = "cpf"></br>
-                    Senha: </br><input type="password" name = "senha"></br>
+                    Senha: </br><input type="password" name = "senha"> </br>
                     Confirme a sua senha:</br> <input type="password" name = "confirmaSenha"></br>
+                    Email: </br><input type="email" name ="email"></br>
                     Endereco: </br><input type="text" name = "endereco"></br>
                     Celular: </br><input type="text" name = "celular"></br>
-                    Fixo <a>(forneça apenas numeros)</a>: </br><input type="text" name = "fixo"></br>
+                    Fixo <a>(forneça apenas numeros)</a> </br><input type="text" name = "fixo"></br>
                     </br>
                     </br>
-                    <input type="submit" value = "Cadastrar"><input type="button" onClick="window.open('http://www.google.com')" value = "Cancelar">
+                    </br>
+                    
+                    <input type="submit" value = "Cadastrar" ><input type="button" onClick="window.open('http://www.google.com')" value = "Cancelar">
                 </form>             
             </fieldset>
         </div>

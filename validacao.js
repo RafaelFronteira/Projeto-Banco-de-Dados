@@ -1,3 +1,0 @@
-function ola(){
-    alert("Ola");
-}
