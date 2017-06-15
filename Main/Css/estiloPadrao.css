@@ -1,0 +1,28 @@
+body {
+	background-image: url(http://1.bp.blogspot.com/-OOTntwICWlo/U1lEDrcDuHI/AAAAAAAAEuM/4KQ5EMiQSgM/s0/bg.jpg);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    min-width: 525px;
+}
+
+#conteudo {
+    background-color: white;
+    margin: auto; 
+    height: auto; 
+    width: 50%;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#logo {
+    width:100%;
+    height:auto;
+}

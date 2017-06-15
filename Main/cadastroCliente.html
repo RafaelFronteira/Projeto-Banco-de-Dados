@@ -2,7 +2,9 @@
 <html>
     <head>
         <title>Cadastro</title>
-        <link rel="stylesheet" type="text/css" href="estilo.css">
+
+        <link rel="stylesheet" type="text/css" href="Css/estiloPadrao.css">
+        <link rel="stylesheet" type="text/css" href="Css/estilo.css">
         
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +13,10 @@
         
     <body>
         
-        <div>
-            
+        <div id="conteudo">
             <fieldset><legend>Cadastro</legend>   
                 <form method = "POST" action = "Php/InsereDadosCliente.php">
-                    Nome :</br> <input type="text" name="nome" required></br>
+                    Nome Completo:</br> <input type="text" name="nome" required></br>
                     CPF: </br><input type = "text" name = "cpf"></br>
                     Senha: </br><input type="password" name = "senha"> </br>
                     Confirme a sua senha:</br> <input type="password" name = "confirmaSenha"></br>
@@ -27,7 +28,7 @@
                     </br>
                     </br>
                     
-                    <input type="submit" value = "Cadastrar" ><input type="button" onClick="window.open('http://www.google.com')" value = "Cancelar">
+                    <input type="submit" value = "Cadastrar" ><input type="button" onClick="window.location.href='index.html'" value = "Cancelar">
                 </form>             
             </fieldset>
         </div>

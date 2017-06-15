@@ -1,0 +1,55 @@
+.conteudoPag {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.conteudoPagLivros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.categoria {
+    margin-top: 20px;
+    max-width:30%;
+}
+
+.ulCategoria {
+    padding:0;
+    padding-left: 5px;
+    margin:5px;
+}
+.liCateg {
+    margin-bottom: 5px;
+}
+
+
+.recentesConteudo {
+    margin-top: 20px;
+    max-width:70%;
+}
+
+.listaRecentes {
+    margin:15px;
+}
+
+.title {
+    text-align: center
+}
+
+li{
+    padding:0;
+}
+.ulRecentes {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    margin: 15px;
+}
+
+.imgRecentes {
+    width: 60px;
+    height: 60px;
+}
