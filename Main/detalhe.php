@@ -1,3 +1,32 @@
+<?php
+    require_once 'Php/configuracoes.php';
+
+    $idLivro = $_GET['idLivro'];
+    $sql = "SELECT L.id, L.nome, L.autor,L.editora,C.categoria,L.descricao,L.ano,L.subcategoria,L.img,L.src FROM livro as L JOIN categoria as C on L.categoria = C.id WHERE L.id=$idLivro";
+    $comando = $conecta->query($sql);
+
+    //variaveis
+    $livro;
+    $autor;
+    $editora;
+    $ano;
+    $categoria;
+    $subcategoria;
+    $descricao;
+    $img;
+    $pdf;
+    while($dado = $comando->fetch_assoc()) {
+        $livro = $dado['nome'];
+        $autor = $dado['autor'];
+        $editora = $dado['editora'];
+        $ano = $dado['ano'];
+        $categoria = $dado['categoria'];
+        $subcategoria = $dado['subcategoria'];
+        $descricao = $dado['descricao'];
+        $img = $dado['img'];
+        $pdf = $dado['src'];
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,49 +39,55 @@
     <body>
 	<div id="conteudo">
 		<header>
-		     <h1 style="text-align: center">Nome do Livro</h1>
+            <?php
+		        echo "<h1 style='text-align: center'>$livro</h1>";
+            ?>
 		</header>
 
 		<article>
             <section style="text-align: center">
 			    <figure>
-				    <img src="https://img.elo7.com.br/product/original/8CDDFA/livro-de-presenca-com-caixa-presente-bodas-de-prata.jpg" alt="nome do livro" width="500" height="250" title="nome do livro">
-			    </figure>
+                    <?php
+				        echo "<img src='$img' alt='$livro' width='500' height='250' title='$livro'>";
+                    ?>
+                </figure>
 		    </section>
 
 		    <div id="divLer">
-                <a id="linkLer" href="http://livros01.livrosgratis.com.br/gu009647.pdf" target="_blank">
-                    <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i>
-                    Ler - nome do livro
-                </a>
+                <?php
+                echo "<a id='linkLer' href='$pdf' target='_blank'>";
+                    echo "<i class='fa fa-file-pdf-o fa-2x' aria-hidden='true'></i>";
+                    echo "Ler - $livro";
+                echo "</a>";
+                ?>
 		    </div>
 
 		    <section class="detalhesLivro">
+                <?php
+                echo "<h5>Autor:</h5>";
+                echo "<p>$autor</p>";
                 
-                <h5>Autor:</h5>
-                <p>Fulano de Tal</p>
+                echo "<h5>Editora:</h5>";
+                echo "<p>$editora</p>";
                 
-                <h5>Editora:</h5>
-                <p>Camaleão</p>
+                echo "<h5>Ano:</h5>";
+                echo "<p>$ano</p>";
                 
-                <h5>Ano:</h5>
-                <p>00/00/000</p>
+                echo "<h5>Categoria:</h5>";
+                echo "<p>$categoria</p>";
                 
-                <h5>Categoria:</h5>
-                <p>XXYYYZZZZ</p>
-                
-                <h5>Descrição:</h5>
-                <p>
-                    Lorem ipsum dolor sit amet, 
-                    consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, 
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
+                echo "<h5>Subcategoria:</h5>";
+                echo "<p>$subcategoria</p>";
+
+                echo "<h5>Descrição:</h5>";
+                echo "<p>$descricao</p>";
+                ?>
 		    </section>
 		</article>
 	</div>
     </body>
 </html>
+
+<?php
+    $conecta->close();
+?>
