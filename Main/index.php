@@ -57,9 +57,10 @@
                                 require_once 'Php/pegaLivros.php';
 
                                 while($livro = $comando->fetch_assoc()) {
+                                    $id = $livro['id'];
                                     echo "<li>";
                                     echo "<div class='listaRecentes'>";
-                                    echo "<a href='#'>";
+                                    echo "<a href='detalhe.php?idLivro=$id'>";
                                     echo "<img class='imgRecentes' title=".$livro['nome']." alt=".$livro['nome']." src=".$livro['img'].">";
                                     echo "<br>";
                                     echo "<span>".$livro['nome']."</span>";
