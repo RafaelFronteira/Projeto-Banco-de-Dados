@@ -3,6 +3,8 @@
 
 
     //Pega os dados inseridos no formulario html:
+    
+    
     $nome = $_POST["nome"]; 
     $cpf = $_POST["cpf"];
     $senha = $_POST["senha"];
