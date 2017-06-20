@@ -21,6 +21,7 @@
                 echo "<section class='conteudoPag'>";
                     echo "<nav class='links'>";
                         echo "<a href='index.php'>Home</a>";
+                        echo "<a href='pagAdmin.php'>Admin </a>";
                         echo "<a href='paginalogin.html'>Login</a>";
                         echo "<a href='cadastroCliente.html'> Cadastrar-se</a>";
                     echo "</nav>";

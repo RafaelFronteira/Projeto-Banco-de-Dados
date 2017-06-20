@@ -1,0 +1,25 @@
+header > h1 {
+    text-align: center;
+}
+
+.principal {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.divCont1 {
+    max-width: 150px;
+    margin-right: 25px;
+}
+
+.cont1 {
+    border: 1px solid black;
+}
+
+.lk {
+    padding: 10px;
+}
+
+.cont2 {
+    border: 1px solid black;
+}
