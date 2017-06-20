@@ -18,29 +18,12 @@ USE `biblioteca`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `categoria`
+-- Dumping events for database 'biblioteca'
 --
 
-DROP TABLE IF EXISTS `categoria`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `categoria` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `categoria` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
 --
--- Dumping data for table `categoria`
+-- Dumping routines for database 'biblioteca'
 --
-
-LOCK TABLES `categoria` WRITE;
-/*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
-INSERT INTO `categoria` VALUES (1,'Aventura'),(2,'Ciências'),(3,'Comédia'),(4,'Diversos'),(5,'Economia'),(6,'Ficção'),(7,'Filosofia'),(8,'Infanto-Juvenil'),(9,'Linguística'),(10,'Poesia'),(11,'Religião'),(12,'Romance'),(13,'Suspense'),(14,'Terror');
-/*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -51,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-19 23:52:50
+-- Dump completed on 2017-06-19 23:52:51

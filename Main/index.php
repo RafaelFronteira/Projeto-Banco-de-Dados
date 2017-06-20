@@ -14,8 +14,6 @@
             <!--cabeçalho da página-->
             <header>
                 <?php
-                     include_once 'Php/configuracoes.php';
-                     include_once 'Php/acessoRestrito.php';
                 echo "<h1>";
                     echo "<img id='logo' src='img/logo2.png'>";
                 echo "</h1>";
@@ -26,13 +24,10 @@
                         echo "<a href='paginalogin.html'>Login</a>";
                         echo "<a href='cadastroCliente.html'> Cadastrar-se</a>";
                     echo "</nav>";
-                    echo "<form class='pesquisa'>";
-                        echo "<input type='search' placeholder='Digite o nome do livro'>";
+                    echo "<form method='POST' class='pesquisa' action='Php/searchLivro.php'>";
+                        echo "<input type='search' name='pesquisa' placeholder='Digite o nome do livro'>";
                         echo "<input type='submit' value='Procurar'>";
                     echo "</form>";
-                    if(isset($_SESSION)){
-                        echo "<span>".$_SESSION['email']." <a href='Php/principal.php?sub=true'>Sair</a></span>";
-                    }
                 echo "</section>";
                 ?>
             </header>
@@ -43,7 +38,7 @@
                 <!--organiza por assunto-->
                 <section class="categoria">
                     <!--Categorias-->
-                    <h4>Categorias:</h4>
+                    <h3>Categorias</h3>
                     <ul class="ulCategoria">
                         <?php
                             require_once 'Php/pegaCategoria.php';   
@@ -58,7 +53,7 @@
     
                 <section class="recentesConteudo">
                     <!--Livros recentes-->
-                    <h4 class="title">Recentes</h4>
+                    <h3 class="title">Recentes</h3>
                     <ul class="ulRecentes">
                             <?php
                                 require_once 'Php/pegaLivros.php';

@@ -15,7 +15,7 @@
         session_start(); 
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['senha'] = $_POST['senha']; 
-        header("Location:http://localhost/banco_de_dados/Projeto-Banco-de-Dados/Main/index.php");
+        header("Location:http://localhost/GitHub/Projeto-Banco-de-Dados/Main/index.php");
     }
     else {
         echo 'Erro!';
