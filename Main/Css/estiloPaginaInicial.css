@@ -49,7 +49,33 @@ li{
     margin: 15px;
 }
 
+.sessaoRecente {
+    max-height: 150px;
+    display:flex;
+    justify-content: flex-start;
+}
+
 .imgRecentes {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 120px;
+    margin: 20px;
+}
+
+.tituloRecente {
+    text-align: left;
+}
+
+.descricaoRecente {
+    max-height: 100px;
+    overflow-y: hidden;
+    text-align: justify;
+}
+
+.descricaoRecente:hover {
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
 }

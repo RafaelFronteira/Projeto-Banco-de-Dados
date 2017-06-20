@@ -4,11 +4,26 @@
         <title>BookStandBR-Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Css/estiloPadrao.css">
     </head>
     <body>
-        <fieldset><legend></legend>
-          email do arigó 
-          senha do arigó 
-          </fieldset>
+        <div id="conteudo">
+            <fieldset><legend>Login</legend>
+             <form method ="POST" action = "Php/loginPHP.php">
+                Email:<input type ="email" name ="email" required> <br> 
+             <br>
+
+              Senha: <input type ="password" name = "senha">
+              <br>
+              
+
+              <input type="submit" name = "validar">
+              </form>
+                <br>
+                <br>
+              <a href="cadastroCliente.html">Cadastre-se</a>
+              <a href="index.php">Cancelar</a>
+              </fieldset>
+        </div>
     </body>
 </html>

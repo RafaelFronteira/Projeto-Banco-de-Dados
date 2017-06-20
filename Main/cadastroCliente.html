@@ -17,18 +17,18 @@
             <fieldset><legend>Cadastro</legend>   
                 <form method = "POST" action = "Php/InsereDadosCliente.php">
                     Nome Completo:</br> <input type="text" name="nome" required></br>
-                    CPF: </br><input type = "text" name = "cpf"></br>
-                    Senha: </br><input type="password" name = "senha"> </br>
-                    Confirme a sua senha:</br> <input type="password" name = "confirmaSenha"></br>
-                    Email: </br><input type="email" name ="email"></br>
-                    Endereco: </br><input type="text" name = "endereco"></br>
-                    Celular: </br><input type="text" name = "celular"></br>
-                    Fixo <a>(forneça apenas numeros)</a> </br><input type="text" name = "fixo"></br>
+                    CPF: </br><input type = "text" name = "cpf" required></br>
+                    Senha: </br><input type="password" name = "senha" required> </br>
+                    Confirme a sua senha:</br> <input type="password" name = "confirmaSenha" required></br>
+                    Email: </br><input type="email" name ="email" required></br>
+                    Endereco: </br><input type="text" name = "endereco" required></br>
+                    Celular: </br><input type="text" name = "celular" required></br>
+                    Fixo <a>(forneça apenas numeros)</a> </br><input type="text" name = "fixo" required></br>
                     </br>
                     </br>
                     </br>
                     
-                    <input type="submit" value = "Cadastrar" ><input type="button" onClick="window.location.href='index.html'" value = "Cancelar">
+                    <input type="submit" value = "Cadastrar" ><input type="button" onClick="window.location.href='index.php'" value = "Cancelar">
                 </form>             
             </fieldset>
         </div>

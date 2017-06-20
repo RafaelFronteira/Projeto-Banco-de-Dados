@@ -3,3 +3,5 @@
 
     $sql = "SELECT categoria FROM categoria";
     $comando = $conecta->query($sql);
+    
+    

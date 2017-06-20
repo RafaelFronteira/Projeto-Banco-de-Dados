@@ -2,7 +2,7 @@
     require_once 'Php/configuracoes.php';
 
     $idLivro = $_GET['idLivro'];
-    $sql = "SELECT L.id, L.nome, L.autor,L.editora,C.categoria,L.descricao,L.ano,L.subcategoria,L.img,L.src FROM livro as L JOIN categoria as C on L.categoria = C.id WHERE L.id=$idLivro";
+    $sql = "SELECT L.id, L.titulo, L.autor,L.editora,C.categoria,L.descricao,L.ano,L.subcategoria,L.img,L.src FROM livro as L JOIN categoria as C on L.categoria = C.id WHERE L.id=$idLivro";
     $comando = $conecta->query($sql);
 
     //variaveis
@@ -16,7 +16,7 @@
     $img;
     $pdf;
     while($dado = $comando->fetch_assoc()) {
-        $livro = $dado['nome'];
+        $livro = $dado['titulo'];
         $autor = $dado['autor'];
         $editora = $dado['editora'];
         $ano = $dado['ano'];

@@ -13,21 +13,28 @@
         <div id="conteudo">
             <!--cabeçalho da página-->
             <header>
-                <h1>
-                    <img id="logo" src="img/logo2.png">
-                </h1>
-                <!--links de navegação-->
-                <section class="conteudoPag">
-                    <nav class="links">
-                        <a href="index.php">Home</a>
-                        <a href="paginalogin.html">Login</a>
-                        <a href="cadastroCliente.html"> Cadastrar-se</a>
-                    </nav>
-                    <form class="pesquisa">
-                        <input type="search" placeholder="Digite o nome do livro">
-                        <input type="submit" value="Procurar">
-                    </form>
-                </section>
+                <?php
+                     include_once 'Php/configuracoes.php';
+                     include_once 'Php/acessoRestrito.php';
+                echo "<h1>";
+                    echo "<img id='logo' src='img/logo2.png'>";
+                echo "</h1>";
+                echo "<!--links de navegação-->";
+                echo "<section class='conteudoPag'>";
+                    echo "<nav class='links'>";
+                        echo "<a href='index.php'>Home</a>";
+                        echo "<a href='paginalogin.html'>Login</a>";
+                        echo "<a href='cadastroCliente.html'> Cadastrar-se</a>";
+                    echo "</nav>";
+                    echo "<form class='pesquisa'>";
+                        echo "<input type='search' placeholder='Digite o nome do livro'>";
+                        echo "<input type='submit' value='Procurar'>";
+                    echo "</form>";
+                    if(isset($_SESSION)){
+                        echo "<span>".$_SESSION['email']." <a href='Php/principal.php?sub=true'>Sair</a></span>";
+                    }
+                echo "</section>";
+                ?>
             </header>
     
             <!--conteúdo principal da página-->
@@ -55,15 +62,18 @@
                     <ul class="ulRecentes">
                             <?php
                                 require_once 'Php/pegaLivros.php';
-
                                 while($livro = $comando->fetch_assoc()) {
                                     $id = $livro['id'];
                                     echo "<li>";
                                     echo "<div class='listaRecentes'>";
                                     echo "<a href='detalhe.php?idLivro=$id'>";
-                                    echo "<img class='imgRecentes' title=".$livro['nome']." alt=".$livro['nome']." src=".$livro['img'].">";
-                                    echo "<br>";
-                                    echo "<span>".$livro['nome']."</span>";
+                                    echo "<section class='sessaoRecente'>";
+                                    echo "<img class='imgRecentes' title=".$livro['titulo']." alt=".$livro['titulo']." src=".$livro['img'].">";
+                                    echo "<div class='dadosRecentes'>";
+                                    echo "<p class='tituloRecente'>".$livro['titulo']."</p>";
+                                    echo "<p class='descricaoRecente'>".$livro['descricao']."</p>";
+                                    echo "</div>";
+                                    echo "</section>";
                                     echo "</a>";
                                     echo "</div>";
                                     echo "</li>";
