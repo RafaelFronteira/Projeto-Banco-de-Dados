@@ -2,7 +2,5 @@
 
     session_start(); 
     if(isset($_SESSION['email'])){
-
-    }else{
-        header("Location:http://localhost/banco_de_dados/Projeto-Banco-de-Dados/Main/paginalogin.html");
+        header("Location:http://localhost/GitHub/Projeto-Banco-de-Dados/Main/index.php");
     }

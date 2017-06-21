@@ -1,0 +1,13 @@
+.cont2 {
+    border: 1px solid black;
+    display:flex;
+    justify-content: flex-start;
+    max-height:210px;
+    width: 100%;
+}
+
+#imgLivro {
+    width: 100px;
+    height:160px;
+    margin:10px;
+}

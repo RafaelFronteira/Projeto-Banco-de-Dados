@@ -6,7 +6,8 @@
         <!--configura os acentos-->
         <meta charset="utf-8">
         <!--pegando arquivo css para estilizar a página-->
-        <link rel="stylesheet" href="Css/estiloPadrao.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="Css/estiloPadrao.css">        
         <link rel="Stylesheet" href="Css/estiloPaginaInicial.css">
     </head>
     <body>
@@ -14,25 +15,20 @@
             <!--cabeçalho da página-->
             <header>
                 <?php
-                     include_once 'Php/configuracoes.php';
-                     include_once 'Php/acessoRestrito.php';
                 echo "<h1>";
                     echo "<img id='logo' src='img/logo2.png'>";
                 echo "</h1>";
                 echo "<!--links de navegação-->";
                 echo "<section class='conteudoPag'>";
-                    echo "<nav class='links'>";
-                        echo "<a href='index.php'>Home</a>";
-                        echo "<a href='paginalogin.html'>Login</a>";
-                        echo "<a href='cadastroCliente.html'> Cadastrar-se</a>";
-                    echo "</nav>";
-                    echo "<form class='pesquisa'>";
-                        echo "<input type='search' placeholder='Digite o nome do livro'>";
-                        echo "<input type='submit' value='Procurar'>";
+                   echo "<ul class='nav nav-tabs'>";
+                        echo "<li role='presentation' class='active'><a href='index.php'>Home</a></li>";
+                        echo "<li role='presentation'><a href='paginalogin.html'>Login</a></li>";
+                        echo "<li role='presentation'><a href='cadastroCliente.html'>Cadastre-se</a></li>";
+                    echo "</ul>";
+                    echo "<form method='POST' class='navbar-form navbar-right' role='search' action='Php/searchLivro.php'>";
+                        echo "<input type='search' class='form-control' name='pesquisa' placeholder='Digite o nome do livro'>";
+                        echo "<input type='submit'class='btn btn-default' value='Procurar'>";
                     echo "</form>";
-                    if(isset($_SESSION)){
-                        echo "<span>".$_SESSION['email']." <a href='Php/principal.php?sub=true'>Sair</a></span>";
-                    }
                 echo "</section>";
                 ?>
             </header>
@@ -43,13 +39,13 @@
                 <!--organiza por assunto-->
                 <section class="categoria">
                     <!--Categorias-->
-                    <h4>Categorias:</h4>
+                    <h3>Categorias</h3>
                     <ul class="ulCategoria">
                         <?php
                             require_once 'Php/pegaCategoria.php';   
                             while($dado = $comando->fetch_assoc()) {
                                 echo "<li class='liCateg'>";
-                                echo "<a href='#'>".$dado['categoria']."</a>";
+                                echo "<a href='#' style='text-decoration: none'>".$dado['categoria']."</a>";
                                 echo "</li>";
                             } 
                         ?>
@@ -58,15 +54,15 @@
     
                 <section class="recentesConteudo">
                     <!--Livros recentes-->
-                    <h4 class="title">Recentes</h4>
+                    <h3 class="title">Recentes</h3>
                     <ul class="ulRecentes">
                             <?php
                                 require_once 'Php/pegaLivros.php';
                                 while($livro = $comando->fetch_assoc()) {
                                     $id = $livro['id'];
                                     echo "<li>";
-                                    echo "<div class='listaRecentes'>";
-                                    echo "<a href='detalhe.php?idLivro=$id'>";
+                                    echo "<div class='listaRecentes' style='text-decoration: none'>";
+                                    echo "<a href='detalhe.php?idLivro=$id' style='text-decoration: none'>";
                                     echo "<section class='sessaoRecente'>";
                                     echo "<img class='imgRecentes' title=".$livro['titulo']." alt=".$livro['titulo']." src=".$livro['img'].">";
                                     echo "<div class='dadosRecentes'>";
