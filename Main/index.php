@@ -24,6 +24,17 @@
                         echo "<li role='presentation' class='active'><a href='index.php'>Home</a></li>";
                         echo "<li role='presentation'><a href='paginalogin.html'>Login</a></li>";
                         echo "<li role='presentation'><a href='cadastroCliente.html'>Cadastre-se</a></li>";
+                        echo "<li class='dropdown'>";
+                            echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Categorias<span class='caret'></span></a>";
+                            echo "<ul class='dropdown-menu'>";
+                                require_once 'Php/pegaCategoria.php';   
+                                while($dado = $comando->fetch_assoc()) {
+                                    echo "<li>";
+                                    echo "<a href='#' style='text-decoration: none'>".$dado['categoria']."</a>";
+                                    echo "</li>";
+                                } 
+                            echo "</ul>";
+                        echo "</li>";
                     echo "</ul>";
                     echo "<form method='POST' class='navbar-form navbar-right' role='search' action='Php/searchLivro.php'>";
                         echo "<input type='search' class='form-control' name='pesquisa' placeholder='Digite o nome do livro'>";
@@ -35,23 +46,6 @@
     
             <!--conteúdo principal da página-->
             <article class="conteudoPagLivros"> 
-    
-                <!--organiza por assunto-->
-                <section class="categoria">
-                    <!--Categorias-->
-                    <h3>Categorias</h3>
-                    <ul class="ulCategoria">
-                        <?php
-                            require_once 'Php/pegaCategoria.php';   
-                            while($dado = $comando->fetch_assoc()) {
-                                echo "<li class='liCateg'>";
-                                echo "<a href='#' style='text-decoration: none'>".$dado['categoria']."</a>";
-                                echo "</li>";
-                            } 
-                        ?>
-                    </ul>
-                </section>
-    
                 <section class="recentesConteudo">
                     <!--Livros recentes-->
                     <h3 class="title">Recentes</h3>
