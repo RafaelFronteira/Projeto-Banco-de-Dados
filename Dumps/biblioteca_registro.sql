@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `biblioteca` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `biblioteca`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: biblioteca
@@ -26,14 +24,12 @@ DROP TABLE IF EXISTS `registro`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `registro` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `usuario` varchar(11) NOT NULL,
   `livro` int(10) unsigned NOT NULL,
   `data_acesso` date DEFAULT NULL,
+  `acessos` int(11) unsigned DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `livro` (`livro`),
-  KEY `usuario` (`usuario`),
-  CONSTRAINT `registro_ibfk_1` FOREIGN KEY (`livro`) REFERENCES `livro` (`id`),
-  CONSTRAINT `registro_ibfk_2` FOREIGN KEY (`usuario`) REFERENCES `usuario` (`cpf`)
+  CONSTRAINT `registro_ibfk_1` FOREIGN KEY (`livro`) REFERENCES `livro` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -55,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-19 23:52:51
+-- Dump completed on 2017-06-20 22:59:35

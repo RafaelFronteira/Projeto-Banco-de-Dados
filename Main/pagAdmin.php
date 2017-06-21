@@ -16,10 +16,9 @@
             <section class='principal'>
                 <div style='margin:50px;'>
                     <ul class='nav nav-pills'>
-                        <li role='presentation' class='active'><a href='#'>Adicionar Livro</a></li>
+                        <li role='presentation' class='active'><a href='insereLivro.hmtl'>Adicionar Livro</a></li>
                         <li role='presentation'><a href='#'>Remover Livro</a></li>
                         <li role='presentation'><a href='#'>Adicionar Categoria</a></li>
-                        <li role='presentation'><a href='#'>Remover Usuário</a></li>
                     </ul>
                 </div>
                 <h3 style='text-align: center'>Livros mais acessados</h3>

@@ -64,7 +64,7 @@
                                     echo "<div class='listaRecentes' style='text-decoration: none'>";
                                     echo "<a href='detalhe.php?idLivro=$id' style='text-decoration: none'>";
                                     echo "<section class='sessaoRecente'>";
-                                    echo "<img class='imgRecentes' title=".$livro['titulo']." alt=".$livro['titulo']." src=".$livro['img'].">";
+                                    echo "<img class='imgRecentes' title=".$livro['titulo']." src=".$livro['img'].">";
                                     echo "<div class='dadosRecentes'>";
                                     echo "<p class='tituloRecente'>".$livro['titulo']."</p>";
                                     echo "<p class='descricaoRecente'>".$livro['descricao']."</p>";

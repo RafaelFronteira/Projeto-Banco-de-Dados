@@ -1,11 +1,10 @@
 <?php
     require_once 'Php/configuracoes.php';
     $idLivro = $_GET['idLivro'];
-    $usuario = '85947245000';
     $data_atual = date("Y-m-d");
 
 
-    $sql = "SELECT usuario, livro, data_acesso, acessos FROM registro where livro = {$idLivro}";
+    $sql = "SELECT livro, data_acesso, acessos FROM registro where livro = {$idLivro}";
     $result = $conecta->query($sql);
 
     if ($result->num_rows > 0) {
@@ -26,7 +25,7 @@
     }
     else {
         //Se não tem, insere novo registro
-        $sql = "INSERT INTO registro (usuario, livro, data_acesso, acessos) VALUES ('{$usuario}',{$idLivro},'{$data_atual}', 1)";
+        $sql = "INSERT INTO registro (livro, data_acesso, acessos) VALUES ({$idLivro},'{$data_atual}', 1)";
 
         if ($conecta->query($sql) === TRUE) {
             echo "<script>Bombou!</script>";
