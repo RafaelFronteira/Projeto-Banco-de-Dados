@@ -21,21 +21,8 @@
                 echo "<!--links de navegação-->";
                 echo "<section class='conteudoPag'>";
                    echo "<ul class='nav nav-tabs'>";
-                        echo "<li role='presentation' class='active'><a href='index.php'>Home</a></li>";
-                        echo "<li role='presentation'><a href='paginalogin.html'>Login</a></li>";
-                        echo "<li role='presentation'><a href='cadastroCliente.html'>Cadastre-se</a></li>";
-                        echo "<li class='dropdown'>";
-                            echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Categorias<span class='caret'></span></a>";
-                            echo "<ul class='dropdown-menu'>";
-                                require_once 'Php/pegaCategoria.php';   
-                                while($dado = $comando->fetch_assoc()) {
-                                    echo "<li>";
-                                    echo "<a href='#' style='text-decoration: none'>".$dado['categoria']."</a>";
-                                    echo "</li>";
-                                } 
-                            echo "</ul>";
-                        echo "</li>";
-                    echo "</ul>";
+                        echo "<li role='presentation'><a href='index.php'>Home</a></li>";
+                        echo "<li role='presentation'><a href='pagAdmin.php'>Administração</a></li>";
                     echo "<form method='POST' class='navbar-form navbar-right' role='search' action='Php/searchLivro.php'>";
                         echo "<input type='search' class='form-control' name='pesquisa' placeholder='Digite o nome do livro'>";
                         echo "<input type='submit'class='btn btn-default' value='Procurar'>";

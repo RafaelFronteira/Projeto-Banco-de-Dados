@@ -18,6 +18,7 @@
 --
 -- Table structure for table `categoria`
 --
+use biblioteca;
 
 DROP TABLE IF EXISTS `categoria`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

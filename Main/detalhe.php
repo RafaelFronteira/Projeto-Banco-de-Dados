@@ -119,7 +119,9 @@
                 ?>
 		    </section>
 		</article>
+            <a style='border: 1px solid black; padding: 5px; border-radius: 5px; margin-top: 20px; background-color: blue; color:white' href="index.php">Voltar pagina inicial</a>
 	</div>
+        
     </body>
 </html>
 
